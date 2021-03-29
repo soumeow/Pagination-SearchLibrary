@@ -129,29 +129,28 @@
         },
         manage_buffer_SendAjax:function(ajax_data)
         {
-  
-
+            $("#loading").show();
+            console.log('ajax_data ', ajax_data);
             $.ajax({ 
                         type:"POST",
                         async: "false",
                         url:ajax_url,
                         data:ajax_data,
-                        dataType: 'json',
+                        // dataType: 'json',
                         beforeSend()
                         {
                            
                         },
                         success(data)
                         {    
-                            
-                           manage_buffer.manage_buffer_AddData(data);
+                           manage_buffer.manage_buffer_AddData(JSON.parse(data));
                            $("#loading").hide();
 
                         },
-                        error: function() 
+                        error: function(e) 
                         {
+                            console.log("Error occured!", e);
                             
-                            console.log("Error occured!");
                         }
                     }); 
         },
@@ -221,8 +220,8 @@
 
             $(document).ready(function()
             { 
-                $("head").append('<script type="text/javascript" src="/./Mock_test_1/pagination1.0/simplePagination.js-master/jquery.simplePagination.js"></script>');
-                $("head").append('<link rel="stylesheet" href="/./Mock_test_1/pagination1.0/simplePagination.js-master/simplePagination.css">');
+                $("head").append('<script type="text/javascript" src="./pagination1.0/simplePagination.js-master/jquery.simplePagination.js"></script>');
+                $("head").append('<link rel="stylesheet" href="./pagination1.0/simplePagination.js-master/simplePagination.css">');
 
                 $("#"+pagi_id).pagination(
                 {      

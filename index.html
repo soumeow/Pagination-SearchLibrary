@@ -7,8 +7,26 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/./Mock_test_1/pagination1.0/library1.0.js"></script>
+	<script type="text/javascript" src="./pagination1.0/library1.0.js"></script>
 </head>
+<style>
+    .loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  left: 49%;
+  top: 49%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 <body>
 	<div class="container-fluid">
         <div class="block-header">
@@ -20,6 +38,8 @@
                               
                             </div>
                             <div class="col-lg-8 col-md-8 col-sm-8" id="main_div" style="text-align: center;position: relative;">
+    <div class="loader" id="loading"></div>
+
                             </div>
                             
                         </div>
@@ -29,6 +49,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="/./Mock_test_1/js/frontend.js"></script>
+    <script type="text/javascript" src="./js/frontend.js"></script>
 </body>
 </html>
